@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>华电新生指南</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow" id="school-short-name">华电</p>
+          <h1 id="app-title">华电新生指南</h1>
+        </div>
+        <button class="ghost-button" id="edit-help-button" type="button">填写说明</button>
+      </header>
+
+      <section class="search-panel">
+        <span class="search-icon" aria-hidden="true"></span>
+        <input id="search-input" type="search" placeholder="当前 搜索" autocomplete="off" />
+      </section>
+
+      <section class="intro-card card">
+        <div class="intro-copy">
+          <p id="school-subtitle" class="intro-subtitle">给新同学的入学生活速查手册</p>
+          <p id="school-intro" class="intro-text"></p>
+          <div id="tag-list" class="tag-list"></div>
+        </div>
+        <div class="school-mark">NCEPU</div>
+      </section>
+
+      <section>
+        <div class="section-heading">
+          <h2>顶部重要提示</h2>
+        </div>
+        <div id="notice-list" class="notice-list"></div>
+      </section>
+
+      <section>
+        <div class="section-heading">
+          <h2>分类模块</h2>
+          <span id="result-count"></span>
+        </div>
+        <div id="category-list" class="category-list"></div>
+      </section>
+    </main>
+
+    <aside class="detail-panel" id="detail-panel" aria-hidden="true">
+      <div class="detail-backdrop" id="detail-backdrop"></div>
+      <article class="detail-card">
+        <button class="close-button" id="close-detail" type="button" aria-label="关闭">×</button>
+        <p class="detail-kicker" id="detail-kicker"></p>
+        <h2 id="detail-title"></h2>
+        <p id="detail-desc" class="detail-desc"></p>
+        <p id="detail-date" class="detail-date"></p>
+        <div id="detail-content" class="detail-content"></div>
+        <p class="detail-contact-note">想了解更多详细信息可加制作组学长联系方式</p>
+      </article>
+    </aside>
+
+    <aside class="help-panel" id="help-panel" aria-hidden="true">
+      <div class="detail-backdrop" id="help-backdrop"></div>
+      <article class="detail-card help-card">
+        <button class="close-button" id="close-help" type="button" aria-label="关闭">×</button>
+        <p class="detail-kicker">内容填写</p>
+        <h2>以后只改 data.js</h2>
+        <p class="detail-desc">学校介绍、顶部提示、分类和文章都集中在 data.js 里。正文用数组分段，一段文字写成一个字符串；需要图片时，把图片放进 assets 文件夹后添加 image 对象。</p>
+        <pre><code>{
+  id: 'prepare-list',
+  title: '入学物品清单',
+  desc: '列表里的简短说明',
+  updatedAt: '2026-08-20',
+  content: [
+    '第一段正文。',
+    '第二段正文。',
+    {
+      type: 'image',
+      src: './assets/docx/rId6.jpeg',
+      caption: '图片说明'
+    }
+  ]
+}</code></pre>
+      </article>
+    </aside>
+
+    <script src="./data.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
