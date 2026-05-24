@@ -6,7 +6,6 @@ const data = window.guideData
 
 const els = {
   title: document.querySelector('#app-title'),
-  schoolShortName: document.querySelector('#school-short-name'),
   schoolSubtitle: document.querySelector('#school-subtitle'),
   schoolIntro: document.querySelector('#school-intro'),
   tagList: document.querySelector('#tag-list'),
@@ -21,11 +20,7 @@ const els = {
   detailTitle: document.querySelector('#detail-title'),
   detailDesc: document.querySelector('#detail-desc'),
   detailDate: document.querySelector('#detail-date'),
-  detailContent: document.querySelector('#detail-content'),
-  helpButton: document.querySelector('#edit-help-button'),
-  helpPanel: document.querySelector('#help-panel'),
-  helpBackdrop: document.querySelector('#help-backdrop'),
-  closeHelp: document.querySelector('#close-help')
+  detailContent: document.querySelector('#detail-content')
 }
 
 function escapeHtml(value) {
@@ -86,7 +81,6 @@ function renderSchool() {
   const { school } = data
   document.title = school.title
   els.title.textContent = school.title
-  els.schoolShortName.textContent = school.shortName
   els.schoolSubtitle.textContent = school.subtitle
   els.schoolIntro.textContent = school.intro
   els.tagList.innerHTML = school.tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join('')
@@ -179,16 +173,6 @@ function closeArticle() {
   els.detailPanel.setAttribute('aria-hidden', 'true')
 }
 
-function openHelp() {
-  els.helpPanel.classList.add('is-open')
-  els.helpPanel.setAttribute('aria-hidden', 'false')
-}
-
-function closeHelp() {
-  els.helpPanel.classList.remove('is-open')
-  els.helpPanel.setAttribute('aria-hidden', 'true')
-}
-
 function bindEvents() {
   els.searchInput.addEventListener('input', (event) => {
     state.keyword = event.target.value
@@ -203,14 +187,10 @@ function bindEvents() {
 
   els.closeDetail.addEventListener('click', closeArticle)
   els.detailBackdrop.addEventListener('click', closeArticle)
-  els.helpButton.addEventListener('click', openHelp)
-  els.closeHelp.addEventListener('click', closeHelp)
-  els.helpBackdrop.addEventListener('click', closeHelp)
 
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
       closeArticle()
-      closeHelp()
     }
   })
 }
