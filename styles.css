@@ -303,6 +303,16 @@ h1 {
   background: #fff;
 }
 
+.category-card {
+  cursor: pointer;
+}
+
+.category-card:focus-within,
+.category-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 22px 54px rgba(51, 99, 151, 0.12);
+}
+
 .empty-card {
   padding: 34px;
   color: #8c97aa;
@@ -399,6 +409,48 @@ h1 {
 
 .detail-content p:last-child {
   margin-bottom: 0;
+}
+
+.category-menu-list {
+  display: grid;
+  gap: 12px;
+}
+
+.category-menu-item {
+  width: 100%;
+  padding: 18px;
+  border: 1px solid #e3ebf7;
+  border-radius: 18px;
+  background: #f8fbff;
+  color: #172033;
+  text-align: left;
+}
+
+.category-menu-item:hover {
+  border-color: rgba(52, 120, 216, 0.32);
+  background: #fff;
+}
+
+.category-menu-item.is-overview {
+  background: #edf5ff;
+}
+
+.menu-title,
+.menu-desc {
+  display: block;
+}
+
+.menu-title {
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.menu-desc {
+  margin-top: 6px;
+  color: #6f7c91;
+  font-size: 14px;
+  line-height: 1.55;
 }
 
 .detail-contact-note {
