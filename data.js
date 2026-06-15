@@ -320,6 +320,37 @@ const guideData = {
           ]
         }
       ]
+    },
+    {
+      "id": "forum",
+      "name": "校园论坛",
+      "icon": "坛",
+      "summary": "校园墙、华电社区、二手圈品、交友脱单、匿名树洞与互助群信息。",
+      "color": "#0f8f82",
+      "bgColor": "#e9f8f5",
+      "articles": [
+        {
+          "id": "campus-wall",
+          "title": "校园论坛与校园墙",
+          "desc": "华电社区与校园墙入口，含校园墙微信联系方式。",
+          "updatedAt": "2026-06-15",
+          "content": [
+            "校园墙微信，NCEPU_BBQ1",
+            {
+              "type": "image",
+              "src": "./assets/forum/campus-forum-poster.jpg",
+              "caption": "华电社区与校园墙二维码",
+              "alt": "华电社区与校园墙二维码"
+            },
+            {
+              "type": "image",
+              "src": "./assets/forum/campus-forum-screenshot.jpg",
+              "caption": "华北电力大学（保定）圈页面示意",
+              "alt": "华北电力大学（保定）圈页面示意"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
